@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main">
+    <h1 class="title">🖼 Online Image Converter</h1>
+
+    <!-- Загрузка -->
+    <div class="upload-zone" id="uploadZone">
+      <p>Перетащи файлы сюда или <label for="fileInput" class="file-label">выбери</label></p>
+      <input type="file" id="fileInput" multiple hidden>
+    </div>
+
+    <!-- Список файлов -->
+    <ul id="fileList" class="file-list"></ul>
+
+    <!-- Выбор формата -->
+    <div class="format-section hidden" id="formatSection">
+      <label for="format">Формат:</label>
+      <select id="format">
+        <option value="jpg">JPG</option>
+        <option value="png">PNG</option>
+        <option value="webp">WEBP</option>
+        <option value="gif">GIF</option>
+      </select>
+    </div>
+
+    <!-- Прогресс -->
+    <div id="progressBar" class="progress hidden">
+      <div class="progress-fill"></div>
+    </div>
+
+    <!-- Кнопки -->
+    <button id="convertBtn" class="btn hidden">Конвертировать</button>
+    <a id="downloadBtn" class="btn hidden" href="#">Скачать</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
