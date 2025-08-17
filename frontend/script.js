@@ -30,19 +30,25 @@ fileInput.addEventListener("change", (event) => {
   showFiles();
 });
 
-/* Отображение списка */
+/* Отображение списка с превью */
 function showFiles() {
   fileList.innerHTML = "";
   files.forEach((file, i) => {
+    if (!file.type.startsWith("image/")) return; // Проверяем, что это изображение
+
     const li = document.createElement("li");
     li.style.animationDelay = `${i * 0.05}s`;
 
     const img = document.createElement("img");
     img.src = URL.createObjectURL(file);
-    img.onload = () => URL.revokeObjectURL(img.src);
+    img.alt = file.name;
+    img.onload = () => URL.revokeObjectURL(img.src); // Освобождаем память
+
+    const fileName = document.createElement("span");
+    fileName.textContent = file.name;
 
     li.appendChild(img);
-    li.appendChild(document.createTextNode(file.name));
+    li.appendChild(fileName);
     fileList.appendChild(li);
   });
 

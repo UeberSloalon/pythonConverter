@@ -3,45 +3,53 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  background: #f4f4f9; /* Светлый фон */
   color: #333;
-}
-
-.main {
-  text-align: center;
-  width: 100%;
-  max-width: 800px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Высота страницы */
 }
 
 /* Заголовок */
 .title {
-  font-size: 36px;
-  margin-bottom: 30px;
-  color: #4a90e2;
-  animation: fade-slide 0.6s ease;
+  font-size: 48px; /* Увеличиваем размер текста */
+  margin-top: 20px; /* Отступ сверху */
+  margin-bottom: 40px; /* Отступ снизу */
+  color: #4a90e2; /* Синий цвет заголовка */
+}
+
+/* Центрируем блок */
+.main {
+  text-align: center;
+  width: 400px; /* Ограничиваем ширину */
+  padding: 20px;
+  background: #ffffff; /* Белый фон для блока */
+  border-radius: 12px; /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 15px rgba(74, 144, 226, 0.5); /* Добавляем эффект свечения */
+  margin-top: auto; /* Центрируем блок */
+  margin-bottom: auto; /* Центрируем блок */
+  transition: box-shadow 0.3s ease; /* Плавный переход для свечения */
+}
+.main:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 25px rgba(74, 144, 226, 0.7); /* Усиливаем свечение при наведении */
 }
 
 /* Зона загрузки */
 .upload-zone {
-  border: 2px dashed #4a90e2;
-  border-radius: 16px;
-  padding: 50px;
+  border: 2px dashed #4a90e2; /* Синяя рамка */
+  border-radius: 8px;
+  padding: 30px;
   margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  transition: background 0.3s, transform 0.2s;
+  background: rgba(240, 240, 240, 0.8); /* Легкий оттенок для зоны загрузки */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s, border-color 0.3s;
   cursor: pointer;
 }
 .upload-zone:hover {
-  background: rgba(255, 255, 255, 1);
-  transform: scale(1.02);
+  background: rgba(240, 240, 240, 1); /* Более яркий фон при наведении */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Более заметная тень */
+  border-color: #357ABD; /* Темно-синий цвет рамки при наведении */
 }
 
 .file-label {
@@ -61,25 +69,26 @@ body {
 }
 
 .file-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 6px;
   background: #f7f7f7;
   font-size: 14px;
   color: #555;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   opacity: 0;
   transform: translateY(10px);
   animation: fade-slide 0.4s forwards;
 }
 
 .file-list li img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
   border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Селектор формата */
@@ -114,17 +123,17 @@ select {
   display: inline-block;
   padding: 14px 28px;
   margin-top: 15px;
-  background: #4a90e2;
+  background: #4a90e2; /* Синий фон кнопки */
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   transition: background 0.3s, transform 0.2s;
   text-decoration: none;
 }
 .btn:hover {
-  background: #357ABD;
+  background: #357ABD; /* Более темный синий при наведении */
   transform: scale(1.05);
 }
 
