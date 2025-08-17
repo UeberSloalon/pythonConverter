@@ -1,0 +1,15 @@
+# Игнорировать виртуальное окружение
+pythonConverter/
+
+# Python кэш и pyc файлы
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Логи
+*.log
+
+# Файлы настроек IDE
+.vscode/
+.idea/

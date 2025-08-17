@@ -33,5 +33,7 @@ async def convert_image(file: UploadFile = File(...), format: str = Form(...)):
 
     return FileResponse(output_path, filename=output_filename, media_type="application/octet-stream")
 
-Frontend_Dir = r"E:\pythonConverter\frontend"
-app.mount("/", StaticFiles(directory=Frontend_Dir, html=True), name="frontend")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FRONTEND_DIR = os.path.join(BASE_DIR, "..", "frontend")
+
+app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
